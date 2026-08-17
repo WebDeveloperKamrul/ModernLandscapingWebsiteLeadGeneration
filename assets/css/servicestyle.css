@@ -1,0 +1,308 @@
+/* =========================
+   SERVICES SECTION
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.services-section {
+    width: 100%;
+    background: #eef0b5;
+    padding: 70px 20px 75px;
+    overflow: hidden;
+}
+
+.services-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.services-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 32px;
+}
+
+.services-intro {
+    max-width: 470px;
+}
+
+.services-intro h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 400;
+    color: #283024;
+    margin-bottom: 14px;
+}
+
+.services-intro p {
+    max-width: 430px;
+
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.55;
+    font-weight: 400;
+
+    color: #6b7054;
+}
+
+
+/* =========================
+   VIEW ALL SERVICES
+========================= */
+
+.view-services {
+    position: relative;
+
+    display: inline-block;
+
+    padding-bottom: 7px;
+
+    color: #30372b;
+    text-decoration: none;
+
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.view-services span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: #7d805d;
+
+    transition: width 0.3s ease;
+}
+
+.view-services:hover span {
+    width: 60%;
+}
+
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 11px;
+}
+
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.service-card {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 202px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    background: #222;
+}
+
+
+/* Image */
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+    transition:
+        transform 0.6s ease,
+        filter 0.5s ease;
+}
+
+
+/* Dark gradient */
+
+.service-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0.05) 55%,
+            rgba(0, 0, 0, 0) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Card title */
+
+.service-card h3 {
+    position: absolute;
+
+    left: 13px;
+    bottom: 13px;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: #fff;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.service-card:hover img {
+    transform: scale(1.06);
+    filter: grayscale(80%);
+}
+
+.service-card:hover h3 {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .services-section {
+        padding: 60px 25px;
+    }
+
+    .services-header {
+        align-items: flex-end;
+    }
+
+    .services-intro h2 {
+        font-size: 42px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .service-card {
+        height: 230px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .services-section {
+        padding: 50px 18px 55px;
+    }
+
+    .services-header {
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    .services-intro {
+        max-width: 100%;
+    }
+
+    .services-intro h2 {
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
+
+    .services-intro p {
+        max-width: 100%;
+
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .view-services {
+        margin-top: 22px;
+        font-size: 8px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .service-card {
+        height: 260px;
+    }
+
+    .service-card h3 {
+        left: 16px;
+        bottom: 16px;
+        font-size: 16px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+    .services-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .services-intro h2 {
+        font-size: 34px;
+    }
+
+    .service-card {
+        height: 230px;
+    }
+}
